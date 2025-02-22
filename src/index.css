@@ -1,1 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Oswald:wght@200..700&display=swap");
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply font-fira bg-black text-white p-10 h-full;
+  }
+}
+
+@theme {
+  --font-fira: "Fira Code";
+}
+
+@layer utilities {
+  .nav {
+    @apply relative tracking-[1px];
+  }
+  .nav::after {
+    @apply content-[''] bg-[#FEA55F] h-[3px] w-0 left-0 -bottom-[2px] absolute rounded-xl duration-300;
+  }
+  .nav:hover::after {
+    @apply w-full;
+  }
+}
