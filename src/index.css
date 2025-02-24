@@ -3,7 +3,7 @@
 
 @layer base {
   body {
-    @apply font-fira bg-black text-white p-10 h-full;
+    @apply font-fira bg-black font-[450] text-white;
   }
 }
 
@@ -13,12 +13,15 @@
 
 @layer utilities {
   .nav {
-    @apply relative tracking-[1px];
+    @apply border-[#1E2D3D] tracking-[1px] transition-colors ease-in hover:text-white;
   }
   .nav::after {
-    @apply content-[''] bg-[#FEA55F] h-[3px] w-0 left-0 -bottom-[2px] absolute rounded-xl duration-300;
+    @apply absolute -bottom-[2px] left-1/2 h-[2px] w-0 rounded-xl bg-[#FEA55F] duration-400 content-[''];
+    transform-origin: center;
+    transform: translateX(-50%) scaleX(0);
   }
   .nav:hover::after {
     @apply w-full;
+    transform: translateX(-50%) scaleX(1);
   }
 }

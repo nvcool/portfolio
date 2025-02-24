@@ -1,8 +1,9 @@
 import { NavLink } from "react-router";
+import { MenuModal } from "./MenuModal";
 
 const links = [
   { name: "roman-gribov", link: "/" },
-  { name: "_hello", link: "home" },
+  { name: "_hello", link: "/" },
   { name: "_about-me", link: "about" },
   { name: "_projects", link: "projects" },
   { name: "_contact-me", link: "contact" },
@@ -14,49 +15,56 @@ const lastLink = links.slice(4);
 
 export const Header = () => {
   return (
-    <header className=" text-[#607B96] ">
-      <nav className=" border-b-[1px] border-[#1E2D3D]">
-        <ul className="grid grid-cols-[_311px_430px_1fr] items-center">
-          <li className="flex">
+    <header className="text-[#607B96]">
+      <nav className="flex justify-between border-b-[1px] border-[#1E2D3D] lg:grid lg:justify-normal">
+        <ul className="grid items-center sm:grid-cols-none lg:grid-cols-[311px_1fr_1fr_1fr]">
+          <li className="flex w-full max-w-[311px]">
             {firstLink.map((link) => {
               return (
                 <NavLink
-                  className="hover:text-white transition-colors ease-in pl-4 px-4 nav w-full py-4 "
+                  className="nav relative w-full py-4 pl-4 whitespace-nowrap"
                   key={link.link}
-                  to={link.link}>
+                  to={link.link}
+                >
                   {link.name}
                 </NavLink>
               );
             })}
           </li>
 
-          <li className="flex ">
+          <li className="hidden lg:flex">
             {middleLinks.map((link) => {
               return (
                 <NavLink
-                  className="hover:text-white transition-colors ease-in pl-4 px-4 nav w-full border-l-[1px] last:border-r-[1px] border-[#1E2D3D] py-4"
+                  className="nav relative border-l-[1px] px-4 py-4 pl-4 whitespace-nowrap last:border-r-[1px]"
                   key={link.link}
-                  to={link.link}>
+                  to={link.link}
+                >
                   {link.name}
                 </NavLink>
               );
             })}
           </li>
 
-          <li className="flex  justify-end">
+          <li className="col-span-2 hidden justify-end lg:flex">
             {lastLink.map((link) => {
               return (
                 <NavLink
-                  className="hover:text-white transition-colors ease-in
-                  border-l-[1px] border-[#1E2D3D] nav py-4 px-5"
+                  className="nav relative border-l-[1px] px-5 py-4"
                   key={link.link}
-                  to={link.link}>
+                  to={link.link}
+                >
                   {link.name}
                 </NavLink>
               );
             })}
           </li>
         </ul>
+        <MenuModal
+          firstLink={firstLink}
+          middleLinks={middleLinks}
+          lastLink={lastLink}
+        />
       </nav>
     </header>
   );
