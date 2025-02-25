@@ -37,7 +37,7 @@ export const MenuModal = ({
           <Dialog.Description className="hidden" />
           <div className="border-b-[1px] border-[#1E2D3D]">
             <ul className="grid items-center">
-              <li className="py-4">
+              <li className="border-b-[1px] border-[#1E2D3D] py-4">
                 {firstLink.map((link) => {
                   return (
                     <NavLink
@@ -55,7 +55,7 @@ export const MenuModal = ({
                 {middleLinks.map((link) => {
                   return (
                     <NavLink
-                      className="nav relative border px-4 py-4 pl-4"
+                      className="nav relative border-b-[1px] px-4 py-4 pl-4"
                       key={link.link}
                       to={link.link}
                     >
