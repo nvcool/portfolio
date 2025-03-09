@@ -35,15 +35,19 @@
   }
 
   .swiper {
-    @apply px-10;
+    @apply h-[691px] px-5;
+  }
+
+  .swiper-wrapper {
+    @apply px-2;
   }
 
   .swiper-slide {
     @apply blur-[2px];
   }
 
-  .swier-custom {
-    @apply h-full rounded-2xl bg-[#011221] p-5 text-[14px] leading-[170%];
+  .swiper-custom {
+    @apply rounded-2xl bg-[#011221] p-5 text-[14px] leading-[170%] break-all;
   }
 
   .swiper-slide-active {

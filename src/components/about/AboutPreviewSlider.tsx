@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
 // import required modules
-import { Autoplay } from "swiper/modules";
+import { Autoplay, EffectCoverflow } from "swiper/modules";
 
 export default function AboutPreviewSlider() {
   return (
@@ -14,11 +14,61 @@ export default function AboutPreviewSlider() {
       <Swiper
         // direction={"vertical"}
 
-        slidesPerView={1.5}
+        breakpoints={{
+          1600: {
+            slidesPerView: 3,
+            direction: "vertical",
+          },
+          1560: {
+            slidesPerView: 1.9,
+            direction: "vertical",
+          },
+          1500: {
+            slidesPerView: 1.8,
+            direction: "vertical",
+          },
+          1440: {
+            slidesPerView: 1.7,
+            direction: "vertical",
+          },
+          1380: {
+            slidesPerView: 1.6,
+            direction: "vertical",
+          },
+          1320: {
+            slidesPerView: 1.5,
+            direction: "vertical",
+          },
+          1260: {
+            slidesPerView: 1.4,
+            direction: "vertical",
+          },
+          1200: {
+            slidesPerView: 1.3,
+            direction: "vertical",
+          },
+          1120: {
+            slidesPerView: 1.2,
+            direction: "vertical",
+          },
+          1060: {
+            slidesPerView: 1.1,
+            direction: "vertical",
+          },
+          1024: {
+            slidesPerView: 1,
+          },
+          1022: {
+            slidesPerView: 1.1,
+            direction: "horizontal",
+          },
+        }}
+        speed={2500}
         autoplay={{
           delay: 3000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
+        effect="coverflow"
         loop={true}
         spaceBetween={18}
         centeredSlides={true}
@@ -26,10 +76,10 @@ export default function AboutPreviewSlider() {
           clickable: false,
         }}
         navigation={false}
-        modules={[Autoplay]}
-        className="flex h-[200px] w-full"
+        modules={[Autoplay, EffectCoverflow]}
+        className="flex w-full break-all"
       >
-        <SwiperSlide className="swier-custom">
+        <SwiperSlide className="swiper-custom">
           <pre>
             <p className="">
               <span className="text-[#E99287]">function </span>
@@ -70,19 +120,19 @@ export default function AboutPreviewSlider() {
             <span>{"}"}</span>
           </pre>
         </SwiperSlide>
-        <SwiperSlide className="swier-custom">
+        <SwiperSlide className="swiper-custom">
           <pre>
-            <p className="">
+            <p className="break-all">
               <span className="text-[#E99287]">export function </span>
               <span className="text-[#43D9AD]">{"parseModelTuple("}</span>
             </p>
-            <p className="">
+            <p className="break-all">
               <span className="pl-3">
                 response: <span className="text-[#E99287]">Response</span>
               </span>
               ,
               <br />
-              <span className="pl-3">
+              <span className="pl-3 break-all">
                 value:
                 <span className="">{" {"}</span>
                 <span className="text-[#FEA55F]"> + </span>
@@ -109,7 +159,7 @@ export default function AboutPreviewSlider() {
             </p>
           </pre>
         </SwiperSlide>
-        <SwiperSlide className="swier-custom">
+        <SwiperSlide className="swiper-custom">
           <pre>
             <p className="">
               <span className="text-[#E99287]">function </span>
@@ -150,7 +200,7 @@ export default function AboutPreviewSlider() {
             <span>{"}"}</span>
           </pre>
         </SwiperSlide>
-        <SwiperSlide className="swier-custom">
+        <SwiperSlide className="swiper-custom">
           <pre>
             <p className="">
               <span className="text-[#E99287]">export function </span>

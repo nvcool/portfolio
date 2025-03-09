@@ -28,7 +28,8 @@ export const AboutContent = () => {
           </button>
         </div>
       </div>
-      <ol className="grid list-decimal gap-2 pt-4 pr-12 pl-16">
+
+      <ol className="grid list-decimal gap-2 pt-4 pr-2 pl-16">
         {about.map((item) => {
           return <li>{item.item}</li>;
         })}
