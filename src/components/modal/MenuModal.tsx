@@ -1,7 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import menuButton from "../assets/headerModal/menu-button.svg";
-import closeButton from "../assets/headerModal/close-button.svg";
+import menuButton from "../../assets/headerModal/menu-button.svg";
+import closeButton from "../../assets/headerModal/close-button.svg";
 import { NavLink } from "react-router";
+import { useState } from "react";
 
 interface IMenuModalProps {
   firstLink: {
@@ -23,16 +24,22 @@ export const MenuModal = ({
   middleLinks,
   lastLink,
 }: IMenuModalProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <Dialog.Root>
+    <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
       <Dialog.Trigger className="nav relative" asChild>
         <button className="flex cursor-pointer p-4 lg:hidden">
           <img src={menuButton} alt="" />
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed" />
-        <Dialog.Content className="fixed inset-0 m-[15px] rounded-[8px] border-[1px] border-b-[1px] border-[#1E2D3D] bg-[#011627] sm:m-[48px] lg:m-[69px]">
+        <Dialog.Overlay className="fixed z-10" />
+        <Dialog.Content className="fixed inset-0 z-10 m-[15px] rounded-[8px] border-[1px] border-b-[1px] border-[#1E2D3D] bg-[#011627] sm:m-[48px] lg:m-[69px]">
           <Dialog.Title className="hidden" />
           <Dialog.Description className="hidden" />
           <div className="border-b-[1px] border-[#1E2D3D]">
@@ -41,7 +48,8 @@ export const MenuModal = ({
                 {firstLink.map((link) => {
                   return (
                     <NavLink
-                      className="nav relative py-4 pl-4 whitespace-nowrap text-[#607B96]"
+                      onClick={closeModal}
+                      className="nav relative py-4 pl-4 whitespace-nowrap"
                       key={link.link}
                       to={link.link}
                     >
@@ -55,6 +63,7 @@ export const MenuModal = ({
                 {middleLinks.map((link) => {
                   return (
                     <NavLink
+                      onClick={closeModal}
                       className="nav relative border-b-[1px] px-4 py-4 pl-4"
                       key={link.link}
                       to={link.link}
@@ -69,6 +78,7 @@ export const MenuModal = ({
                 {lastLink.map((link) => {
                   return (
                     <NavLink
+                      onClick={closeModal}
                       className="nav relative w-full px-5 py-4"
                       key={link.link}
                       to={link.link}

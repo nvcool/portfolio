@@ -3,7 +3,7 @@
 
 @layer base {
   body {
-    @apply font-fira bg-black leading-normal font-[450] text-white;
+    @apply font-fira bg-black leading-normal font-[450] text-[#607B96];
   }
 }
 
@@ -16,13 +16,38 @@
     @apply border-[#1E2D3D] tracking-[1px] transition-colors ease-in hover:text-white;
   }
   .nav::after {
-    @apply absolute -bottom-[2px] left-1/2 h-[2px] w-0 rounded-xl bg-[#FEA55F] duration-400 content-[''];
+    @apply absolute -bottom-[2px] left-1/2 h-[2px] w-0 rounded-xl bg-none duration-400 content-[''] md:bg-[#FEA55F];
     transform-origin: center;
     transform: translateX(-50%) scaleX(0);
   }
   .nav:hover::after {
     @apply w-full;
     transform: translateX(-50%) scaleX(1);
+  }
+
+  .active-link {
+    @apply text-white; /* Стили для текста */
+  }
+
+  .active-link::after {
+    @apply w-full text-white;
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .swiper {
+    @apply px-10;
+  }
+
+  .swiper-slide {
+    @apply blur-[2px];
+  }
+
+  .swier-custom {
+    @apply h-full rounded-2xl bg-[#011221] p-5 text-[14px] leading-[170%];
+  }
+
+  .swiper-slide-active {
+    @apply blur-none;
   }
 }
 /* 
