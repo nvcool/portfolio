@@ -80,8 +80,8 @@ const contactsInfo: IDropdownContent[] = [
 
 export const AboutNavigate = () => {
   return (
-    <div className="flex border-r-[1px] border-[#1E2D3D] text-[#607B96]">
-      <div className="flex h-full w-16 flex-col items-center gap-8 border-r-[1px] border-[#1E2D3D] pt-4">
+    <div className="flex border-[#1E2D3D] text-[#607B96] lg:border-r-[1px]">
+      <div className="hidden h-full w-16 flex-col items-center gap-8 border-r-[1px] border-[#1E2D3D] pt-4 lg:flex">
         <button
           className={`cursor-pointer text-[#607B96] opacity-50 transition ease-in hover:text-[#81A1C1] hover:opacity-100`}
         >
