@@ -1,5 +1,3 @@
-import { NavLink } from "react-router";
-import twitter from "../../assets/footerImage/footer-twitter.svg";
 import { FooterTelegram } from "../../assets/footerImage/FooterTelegram";
 import { FooterInstagram } from "../../assets/footerImage/FooterInstagram";
 import { FooterGithub } from "../../assets/footerImage/FooterGithub";

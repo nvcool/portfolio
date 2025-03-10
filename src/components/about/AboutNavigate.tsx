@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { HobiesIcon } from "../../assets/aboutImage/HobiesIcon";
 import { PersonalInfo } from "../../assets/aboutImage/PersonalInfo";
 import { ProffesionalInfo } from "../../assets/aboutImage/ProffesionalInfo";
 import pinkRar from "../../assets/aboutImage/pink-rar.svg";
 import greenRar from "../../assets/aboutImage/green-rar.svg";
 import purpleRar from "../../assets/aboutImage/purple-rar.svg";
-import { BoldArrow } from "../../assets/aboutImage/BoldArrow";
-import { ArrowPersonalInfo } from "../../assets/aboutImage/ArrowPersonalInfo";
 import { MailIcon } from "../../assets/aboutImage/MailIcon";
 import { Dropdown } from "../dropdown/Dropdown";
 import { PhoneIcon } from "../../assets/aboutImage/PhoneIcon";

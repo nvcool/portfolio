@@ -1,6 +1,5 @@
 import { NavLink, useLocation } from "react-router";
 import { MenuModal } from "../modal/MenuModal";
-import { useEffect, useState } from "react";
 
 const links = [
   { name: "roman-gribov", link: "/" },
