@@ -12,7 +12,7 @@ export const Contact = () => {
   });
 
   return (
-    <div className="grid lg:flex lg:h-full">
+    <section className="grid lg:flex lg:h-full">
       <div className="flex py-5 pl-3 text-white lg:hidden">_contact-me</div>
       <ContactBar />
       <div className="flex w-full flex-col py-5 lg:py-0">
@@ -27,6 +27,6 @@ export const Contact = () => {
           <ContactFormWrite watchWrite={watchWrite} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };

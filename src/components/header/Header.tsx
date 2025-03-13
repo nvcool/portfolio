@@ -20,7 +20,7 @@ export const Header = () => {
     <header className="">
       <nav className="flex justify-between border-b-[1px] border-[#1E2D3D] lg:grid lg:justify-normal">
         <ul className="grid items-center sm:grid-cols-none lg:grid-cols-[311px_1fr_1fr_1fr]">
-          <li className="flex w-full max-w-[311px]">
+          <li className="z-10 flex w-full max-w-[311px]">
             {firstLink.map((link) => {
               return (
                 <NavLink

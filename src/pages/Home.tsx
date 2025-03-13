@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 
 export const Home = () => {
   return (
-    <div className="flex h-full items-center justify-center gap-[130px] overflow-x-clip p-7">
+    <section className="flex h-full items-center justify-center gap-[130px] overflow-x-clip p-7">
       <div className="relative flex flex-col justify-center gap-20">
         <div className="animate-blob absolute -top-20 -left-20 h-80 w-80 rounded-full bg-[#43D9AD] opacity-40 blur-[87px]"></div>
         <div className="animate-blob animation-delay-2000 absolute -right-20 -bottom-40 h-80 w-80 rounded-full bg-[#4D5BCE] opacity-40 blur-[87px]"></div>
@@ -31,6 +31,6 @@ export const Home = () => {
         </div>
       </div>
       {/* <FlappyBirdGame /> */}
-    </div>
+    </section>
   );
 };

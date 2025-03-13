@@ -10,6 +10,11 @@ import { PhoneIcon } from "../../assets/aboutImage/PhoneIcon";
 import { IDropdownContent } from "../../types/IDropdownContent";
 import { InfoIcon } from "../../assets/aboutImage/InfoIcon";
 
+interface IAboutNavigateProps {
+  activeContent: number[];
+  onContentChange: (id: number, label: string) => void;
+}
+
 // const personalInfo = [
 //   {
 //     personalInfo: [
@@ -40,7 +45,7 @@ const personalInfo: IDropdownContent[] = [
     ],
   },
   {
-    id: 9554,
+    id: 9546354,
     image: greenRar,
     label: "interests",
     subDropdown: [
@@ -53,10 +58,10 @@ const personalInfo: IDropdownContent[] = [
     ],
   },
   {
-    id: 1583,
+    id: 15876,
     image: purpleRar,
     label: "education",
-    subDropdown: [{ id: 9554, image: <InfoIcon />, label: " education" }],
+    subDropdown: [{ id: 574577, image: <InfoIcon />, label: " education" }],
   },
 ];
 
@@ -75,7 +80,10 @@ const contactsInfo: IDropdownContent[] = [
   },
 ];
 
-export const AboutNavigate = () => {
+export const AboutNavigate = ({
+  onContentChange,
+  activeContent,
+}: IAboutNavigateProps) => {
   return (
     <div className="flex border-[#1E2D3D] text-[#607B96] lg:border-r-[1px]">
       <div className="hidden h-full w-16 flex-col items-center gap-8 border-r-[1px] border-[#1E2D3D] pt-4 lg:flex">
@@ -93,8 +101,18 @@ export const AboutNavigate = () => {
       </div>
 
       <div className="w-full">
-        <Dropdown buttonText="personal-info" content={personalInfo} />
-        <Dropdown buttonText="contacts" content={contactsInfo} />
+        <Dropdown
+          activeContent={activeContent}
+          onItemClick={onContentChange}
+          buttonText="personal-info"
+          content={personalInfo}
+        />
+        <Dropdown
+          activeContent={activeContent}
+          onItemClick={onContentChange}
+          buttonText="contacts"
+          content={contactsInfo}
+        />
       </div>
     </div>
   );

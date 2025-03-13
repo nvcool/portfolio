@@ -46,8 +46,16 @@ export const ContactBar = () => {
   return (
     <div className="mx-auto grid h-fit w-full border-r-0 border-[#1E2D3D] lg:block lg:h-full lg:max-w-[311px] lg:border-r-[1px]">
       {" "}
-      <Dropdown buttonText="contacts" content={contactsInfo} />
-      <Dropdown buttonText="find-me-also-in" content={findInfo} />
+      <Dropdown
+        activeContent={[]}
+        buttonText="contacts"
+        content={contactsInfo}
+      />
+      <Dropdown
+        activeContent={[]}
+        buttonText="find-me-also-in"
+        content={findInfo}
+      />
     </div>
   );
 };

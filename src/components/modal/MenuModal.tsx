@@ -39,7 +39,7 @@ export const MenuModal = ({
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed z-10" />
-        <Dialog.Content className="fixed inset-0 z-10 m-[15px] rounded-[8px] border-[1px] border-b-[1px] border-[#1E2D3D] bg-[#011627] sm:m-[48px] lg:m-[69px]">
+        <Dialog.Content className="fixed inset-0 z-10 border-[#1E2D3D] bg-[#011627]">
           <Dialog.Title className="hidden" />
           <Dialog.Description className="hidden" />
           <div className="border-b-[1px] border-[#1E2D3D]">

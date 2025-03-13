@@ -6,9 +6,18 @@ import { IDropdownContent } from "../../types/IDropdownContent";
 interface IDropdownProps {
   buttonText: string;
   content: IDropdownContent[];
+  activeContent: number[];
+  onItemClick?: (id: number, label: string) => void;
+  onContentChange?: (id: number) => void;
 }
 
-export const Dropdown = ({ buttonText, content }: IDropdownProps) => {
+export const Dropdown = ({
+  buttonText,
+  content,
+  onItemClick,
+  activeContent,
+  onContentChange,
+}: IDropdownProps) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const toggleDropdown = () => {
@@ -20,7 +29,14 @@ export const Dropdown = ({ buttonText, content }: IDropdownProps) => {
       <DropdownButton toggle={toggleDropdown} open={open}>
         {buttonText}
       </DropdownButton>
-      <DropdownContent open={open}>{content}</DropdownContent>
+      <DropdownContent
+        onContentChange={onContentChange}
+        activeContent={activeContent}
+        onItemClick={onItemClick}
+        open={open}
+      >
+        {content}
+      </DropdownContent>
     </div>
   );
 };

@@ -1,4 +1,6 @@
-import { CloseButtonHistory } from "../../assets/aboutImage/CloseButtonHistory";
+interface IAboutContentProps {
+  content: number;
+}
 
 const about = [
   { item: "// About me" },
@@ -16,24 +18,16 @@ const about = [
   },
 ];
 
-export const AboutContent = () => {
+export const AboutContent = ({ content }: IAboutContentProps) => {
   return (
-    <div className="grow-3 border-r-[1px] border-[#1E2D3D]">
-      <div className="border-b-[1px] border-[#1E2D3D]">
-        {" "}
-        <div className="flex w-max items-center gap-10 border-r-[1px] border-[#1E2D3D] px-4 py-2.5">
-          <span className="">bio</span>
-          <button className="cursor-pointer transition-colors ease-in hover:text-white">
-            <CloseButtonHistory />
-          </button>
-        </div>
-      </div>
-
-      <ol className="grid list-decimal gap-2 pt-4 pr-2 pl-16">
-        {about.map((item) => {
-          return <li key={item.item}>{item.item}</li>;
-        })}
-      </ol>
+    <div className="h-full grow-3 border-r-[1px] border-[#1E2D3D]">
+      {content === 1552183 && (
+        <ol className="grid list-decimal gap-2 pt-4 pr-2 pl-16">
+          {about.map((item) => {
+            return <li key={item.item}>{item.item}</li>;
+          })}
+        </ol>
+      )}
     </div>
   );
 };

@@ -6,4 +6,6 @@ export interface IDropdownContent {
   label: string;
   link?: string;
   subDropdown?: IDropdownContent[];
+  checkbox?: boolean;
+  category?: string;
 }
