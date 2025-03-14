@@ -35,7 +35,7 @@
   }
 
   .swiper {
-    @apply h-[691px] w-[300px] min-[1256px]:w-[400px] min-[1452px]:w-[500px] min-[1652px]:w-[570px];
+    @apply h-[784px] w-[300px] min-[1256px]:w-[400px] min-[1452px]:w-[500px] min-[1652px]:w-[570px];
   }
 
   .swiper-wrapper {

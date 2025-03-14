@@ -9,6 +9,7 @@ import { HtmlImage } from "../assets/projectsImage/HtmlImage";
 import { ReactImage } from "../assets/projectsImage/ReactImage";
 import { VueImage } from "../assets/projectsImage/VueImage";
 import { IDropdownContent } from "../types/IDropdownContent";
+import { CloseButtonHistory } from "../assets/aboutImage/CloseButtonHistory";
 
 const projects: IDropdownContent[] = [
   {
@@ -50,7 +51,7 @@ const projects: IDropdownContent[] = [
 ];
 
 export const Projects = () => {
-  const [activeContent, setActiveContent] = useState<number[]>([11]);
+  const [activeContent, setActiveContent] = useState<number[]>([]);
   // const [isChekced, setIsChekced] = useState<boolean>(false);
   // //todo добавить handle на нажатие чекбокса
   // const handleChekced = () => {
@@ -65,7 +66,7 @@ export const Projects = () => {
     }
   };
   return (
-    <section className="grid h-full grid-cols-[311px_1fr]">
+    <section className="grid h-fit grid-cols-1 lg:h-full lg:grid-cols-[311px_1fr]">
       <div className="flex py-5 pl-3 text-white lg:hidden">_contact-me</div>
       <div className="h-full">
         <ProjectsBar
@@ -83,7 +84,24 @@ export const Projects = () => {
               .join("; ")}
           />
         ) : (
-          <div />
+          <div className="">
+            <div className="hidden grid-rows-[44px_1fr] border-b-[1px] border-[#1E2D3D] lg:grid">
+              {" "}
+              <div className="flex w-fit items-center border-r-[1px] border-[#1E2D3D]">
+                <button className="cursor-pointer py-2.5 pr-10 pl-4">
+                  all
+                </button>
+                <button className="cursor-pointer py-2.5 pr-4 transition-colors ease-in hover:text-white">
+                  <CloseButtonHistory />
+                </button>
+              </div>
+            </div>
+
+            <div className="flex gap-3 px-10 py-5 lg:hidden">
+              <span className="text-white">// projects</span>
+              <span> / all</span>
+            </div>
+          </div>
         )}
 
         <ProjectsContent activeContent={activeContent} />
