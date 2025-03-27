@@ -47,7 +47,12 @@ export const About = () => {
         </div>
       </div>
       <div className="mx-auto flex lg:hidden">
-        <AboutMobileContent />
+        <AboutMobileContent
+          onContentChange={handleContentChange}
+          activeContent={[content]}
+          history={history}
+          content={content}
+        />
       </div>
     </section>
   );

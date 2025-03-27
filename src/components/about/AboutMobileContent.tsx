@@ -2,7 +2,22 @@ import { useState } from "react";
 import nvcool from "../../assets/aboutImage/about-nvcool.jpg";
 import { AboutDetailsIcon } from "../../assets/aboutImage/AboutDetailsIcon";
 
-export const AboutMobileContent = () => {
+interface IAboutMobileContentProps {
+  content: number;
+  history: {
+    id: number;
+    label: string;
+  }[];
+  activeContent: number[];
+  onContentChange: (id: number, label: string) => void;
+}
+
+export const AboutMobileContent = ({
+  content,
+  history,
+  activeContent,
+  onContentChange,
+}: IAboutMobileContentProps) => {
   const [showDetail, setShowDetail] = useState<boolean>(false);
 
   const show = () => {
@@ -13,29 +28,79 @@ export const AboutMobileContent = () => {
     <div className="py-10">
       <div className="mb-5 flex gap-3 px-5">
         <span className="text-white">// personal-info</span>
-        <span className="">/ bio</span>
+        {history.map((item) => (
+          <div key={item.id} className="">
+            <button
+              onClick={() => onContentChange(item.id, item.label)}
+              className="cursor-pointer transition-colors ease-in hover:text-white"
+            >
+              <span
+                className={`${activeContent.includes(item.id) ? "active-link" : ""}`}
+              >
+                {" "}
+                / {item.label}
+              </span>
+            </button>
+          </div>
+        ))}
       </div>
-      <div className="mx-auto mb-10 w-full max-w-[500px] px-5">
-        <p>
-          About me
-          <br />
-          I`m Frontend-Developer
-          <br />
-          I have 2 years of еxperience in IT and Web Development
-          <br />
-          I develop in React (TypeScript / Tailwind CSS)
-          <br />
-          I help with the creation of a website and web interface
-          <br />
-          I take a high-quality approach to completing the work
-          <br />
-          Bringing the result to perfection
-          <br />
-          Familiar with many web development technologies
-          <br />
-          HTML, CSS/SCSS, JS/TS, Promise/Fetch/Async/Await, BEM, API, REST API ,
-        </p>
-      </div>
+      {content === 1552183 && (
+        <div className="mx-auto mb-10 w-full max-w-[500px] px-5">
+          <p>
+            About me
+            <br />
+            I`m Frontend-Developer
+            <br />
+            I have 2 years of еxperience in IT and Web Development
+            <br />
+            I develop in React (TypeScript / Tailwind CSS)
+            <br />
+            I help with the creation of a website and web interface
+            <br />
+            I take a high-quality approach to completing the work
+            <br />
+            Bringing the result to perfection
+            <br />
+            Familiar with many web development technologies
+            <br />
+            HTML, CSS/SCSS, JS/TS, Promise/Fetch/Async/Await, BEM, API, REST API
+            ,
+          </p>
+        </div>
+      )}
+      {content === 9554 && (
+        <div className="mx-auto mb-10 grid w-full max-w-[500px] gap-4 px-5">
+          <p className="">
+            The FrontEnd developer creates the part of the web page that is
+            visible to the user, and his main task is to accurately convey in
+            the layout what the designer has created, as well as to implement
+            the user logic.
+          </p>
+          <p>
+            The FrontEnd developer creates the part of the web page that is
+            visible to the user, and his main task is to accurately convey in
+            the layout what the designer has created, as well as to implement
+            the user logic.
+          </p>
+        </div>
+      )}
+      {content === 574577 && (
+        <div className="mx-auto mb-10 grid w-full max-w-[500px] gap-4 px-5">
+          <p className="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            eum officiis voluptatibus corrupti dolore, repudiandae corporis
+            eaque id a autem doloribus laudantium quos. Veniam, vero ab? Illo
+            deserunt nobis quae.
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusantium dolorem a pariatur dolore animi culpa cumque possimus
+            eius officia at maxime nihil doloribus id, iure atque perferendis
+            adipisci omnis vel.
+          </p>
+        </div>
+      )}
+
       <div className="mb-5 flex gap-3 px-5">
         <span className="text-white">// Code snippet showcase:</span>
       </div>

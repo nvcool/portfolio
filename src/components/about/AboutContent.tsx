@@ -28,6 +28,33 @@ export const AboutContent = ({ content }: IAboutContentProps) => {
           })}
         </ol>
       )}
+      {content === 9554 && (
+        <div className="grid w-full max-w-[500px] gap-4 pt-4 pr-2 pl-16 leading-10">
+          <p className="">
+            The FrontEnd developer creates the part of the web page that is
+            visible to the user, and his main task is to accurately convey in
+            the layout what the designer has created, as well as to implement
+            the user logic.
+          </p>
+          <p>
+            The FrontEnd developer creates the part of the web page that is
+            visible to the user, and his main task is to accurately convey in
+            the layout what the designer has created, as well as to implement
+            the user logic.
+          </p>
+        </div>
+      )}
+      {content === 574577 && (
+        <p className="w-full max-w-[500px] gap-4 pt-4 pr-2 pl-16 leading-10">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+          eum officiis voluptatibus corrupti dolore, repudiandae corporis eaque
+          id a autem doloribus laudantium quos. Veniam, vero ab? Illo deserunt
+          nobis quae. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Accusantium dolorem a pariatur dolore animi culpa cumque possimus eius
+          officia at maxime nihil doloribus id, iure atque perferendis adipisci
+          omnis vel.
+        </p>
+      )}
     </div>
   );
 };
